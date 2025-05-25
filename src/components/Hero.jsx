@@ -1,3 +1,4 @@
+import resume from "../assets/Raina Kallan Resume.pdf";
 export const Hero = () => {
   return (
     <section
@@ -29,7 +30,7 @@ export const Hero = () => {
               View my work
             </a>
             <a
-              href="https://drive.google.com/file/d/1yskyGWUHpDp4Q-1LRhLhRvQItS58mJUl/view?usp=sharing"
+              href={resume}
               target="_blank"
               rel="noopener noreferrer"
               className=" py-3 px-8 m-4 rounded-full text-white font-body transition duration-300 border border-red-800 hover:shadow-md shadow-primary/70 hover:bg-primary hover:border-white hover:text-glow"
