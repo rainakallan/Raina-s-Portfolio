@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-card: hsl(var(--card));
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-tilt: tilt 6s ease-in-out infinite;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-fade-in-delay-5: fade-in 0.9s ease-in-out 1s forwards;
+  --animate-gradient-move: gradient-move 6s ease infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-rotate-border: border-rotate 3s linear infinite;
+
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  @keyframes tilt {
+    0%,
+    100% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: rotateX(3deg) rotateY(3deg);
+    }
+  }
+  @keyframes gradient-move {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: linear-gradient(
+      135deg,
+      hsl(0, 0%, 5%) 0%,
+      hsl(350, 88%, 14%) 50%,
+      hsl(0, 0%, 5%) 100%
+    );
+    --foreground: hsl(0 0% 96%);
+    --primary: hsl(0 85% 52%);
+    --primary-foreground: hsl(42 100% 85%);
+    --card: hsl(0, 12%, 11%);
+    --border: hsl(0 0% 12%);
+    --accent: hsl(12, 90%, 55%);
+    --card-gradient: linear-gradient(
+      to bottom right,
+      hsl(0, 80%, 4%),
+      hsl(0, 57%, 37%),
+      hsl(0, 86%, 28%)
+    );
+    --secondary: hsl(210 100% 60%);
+    --shadow: rgba(0, 0, 0, 0.6);
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    transition: background 0.3s ease, color 0.3s ease;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 6px rgba(255, 50, 50, 0.5);
+}
+
+@utility card-tilt {
+  @apply transition-transform duration-500;
+  animation: var(--animate-tilt);
+  transform-style: preserve-3d;
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+@utility button {
+  @apply bg-red-600 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-red-500/40 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition duration-300;
+}
+@utility animated-gradient {
+  background-image: var(--card-gradient);
+  background-size: 200% 200%;
+  animation: var(--animate-gradient-move);
+}
+
+@utility shimmer {
+  background-image: var(--card-gradient);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
