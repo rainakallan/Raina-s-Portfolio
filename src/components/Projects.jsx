@@ -29,7 +29,7 @@ export const Projects = () => {
     },
   ];
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="projects" className="py-2 px-4 relative">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-body text-center mb-12 text-[var(--primary-foreground)]">
           {" "}
