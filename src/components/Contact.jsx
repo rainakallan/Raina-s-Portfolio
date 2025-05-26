@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin, LinkIcon, Twitter } from "lucide-react";
 import React from "react";
 
 const Contact = () => {
@@ -33,6 +33,9 @@ const Contact = () => {
           </a>
           <a href="https://github.com/rainakallan" target="_blank">
             <Github />
+          </a>
+          <a href="https://www.fiverr.com/sellers/raina_kallan/" target="blank">
+            <LinkIcon />{" "}
           </a>
         </div>
       </div>
