@@ -1,4 +1,3 @@
-import resume from "../assets/Raina Kallan Resume.pdf";
 export const Hero = () => {
   return (
     <section
