@@ -29,14 +29,6 @@ export const Hero = () => {
             <a href="#projects" className="button py-3 px-8 font-body border ">
               View my work
             </a>
-            <a
-              href={resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" py-3 px-8 m-4 rounded-full text-white font-body transition duration-300 border border-red-800 hover:shadow-md shadow-primary/70 hover:bg-primary hover:border-white hover:text-glow"
-            >
-              Download Resume
-            </a>
           </div>
         </div>
       </div>
