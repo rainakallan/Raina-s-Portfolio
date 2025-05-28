@@ -89,7 +89,7 @@ export const Projects = () => {
         </div>
         <div className="text-center mt-12">
           <a
-            className="button w-fit flex items-center justify-center mx-auto cursor-pointer gap-2"
+            className="button w-fit flex items-center justify-center mx-auto cursor-pointer gap-2 hover:border"
             href="https://github.com/rainakallan"
             target="__blank"
           >

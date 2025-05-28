@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="flex flex-col gap-2 items-center justify-center">
           <a
             href="mailto:rainakallan@outlook.com"
-            className=" button flex items-center gap-2 py-3 px-10 font-body border rounded-4xl"
+            className=" button flex items-center gap-2 py-3 px-10 font-body hover:border"
           >
             Get in Touch <ArrowRight />
           </a>
