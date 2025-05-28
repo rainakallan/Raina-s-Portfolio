@@ -23,12 +23,7 @@ const Contact = () => {
       <div className="p-8">
         <h4 className="font-body mb-4">Connect with me</h4>
         <div className="flex space-x-4 justify-center">
-          <a
-            href="www.linkedin.com/in/raina-kallan
-
-"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/in/raina-kallan/" target="_blank">
             <Linkedin />
           </a>
           <a href="https://github.com/rainakallan" target="_blank">
